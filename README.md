@@ -33,3 +33,21 @@ DynoMetadata.short_commit
 DynoMetadata.to_h
 => {:app_id=>"9daa2797-e49b-4624-932f-ec3f9688e3da", :app_name=>"example-app", :dyno_id=>"1vac4117-c29f-4312-521e-ba4d8638c1ac", :release_created_at=>"2015-04-02T18:00:42Z", :release_version=>"v42", :slug_commit=>"2c3a0b24069af49b3de35b8e8c26765c1dba9ff0", :slug_description=>"Deploy 2c3a0b2", :short_commit=>"2c3a0b2"}
 ```
+
+## Development
+
+### Release workflow
+
+* Update the demonstration in this README if needed.
+
+* Bump the version in `version.rb` in a commit, no need to push (the release task does that).
+
+* Build and [publish](http://guides.rubygems.org/publishing/) the gem. This will create the proper tag in git, push the commit and tag and upload to RubyGems. Use [keycutter](https://github.com/joshfrench/keycutter) to manage multiple RubyGems accounts.
+
+        bundle exec rake release
+
+    * If you are not logged in as on the correct account, the rake task will fail and tell you to set credentials via `gem push`, do that and run the `release` task again. Use [keycutter](https://github.com/joshfrench/keycutter) to manage multiple RubyGems accounts.
+
+* Update the changelog with [GitHub Changelog Generator](https://github.com/skywinder/github-changelog-generator/) commit and push manually.
+
+        github_changelog_generator
