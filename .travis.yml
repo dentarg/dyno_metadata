@@ -1,0 +1,23 @@
+language: ruby
+cache: bundler
+
+# https://docs.travis-ci.com/user/trusty-ci-environment/
+dist: trusty
+sudo: false
+
+rvm:
+  - jruby-9.1.6.0
+  - 1.9.3
+  - 2.2.6
+  - 2.3.3
+  - jruby-head
+  - ruby-head
+
+matrix:
+  allow_failures:
+    - rvm: jruby-head
+    - rvm: ruby-head
+  fast_finish: true
+
+before_install:
+  - gem install bundler
