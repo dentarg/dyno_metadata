@@ -14,9 +14,9 @@ Gem::Specification.new do |s|
   s.summary     = "Information about the app and environment on Heroku."
   s.description = "Gives easy access to details about the release, dyno size,
                   application name as well as the unique identifier for the
-                  particular running dyno."
+                  particular running dyno on Heroku."
   s.license     = "MIT"
-  s.required_ruby_version = ">= 1.9.3"
+  s.required_ruby_version = ">= 2.1.10"
 
   s.add_development_dependency "rake", "~> 11"
   s.add_development_dependency "rspec", "~> 3"

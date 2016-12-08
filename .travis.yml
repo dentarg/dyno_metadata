@@ -7,7 +7,6 @@ sudo: false
 
 rvm:
   - jruby-9.1.6.0
-  - 1.9.3
   - 2.2.6
   - 2.3.3
   - jruby-head
