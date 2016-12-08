@@ -20,3 +20,6 @@ matrix:
 
 before_install:
   - gem install bundler
+
+notifications:
+  email: false

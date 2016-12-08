@@ -1,5 +1,7 @@
 # Dyno Metadata
 
+[![Build Status](https://travis-ci.org/dentarg/dyno_metadata.svg?branch=master)](https://travis-ci.org/dentarg/dyno_metadata)
+
 Helpers to access [Heroku Dyno Metadata](https://devcenter.heroku.com/articles/dyno-metadata) from [`ENV`](https://ruby-doc.org/core-2.2.0/ENV.html). Graceful fallback to dummy values (useful in development).
 
 Installation
