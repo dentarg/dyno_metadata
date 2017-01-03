@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Patrik Ragnarsson"]
   s.email       = ["patrik@starkast.net"]
-  s.homepage    = "http://github.com/dentarg/dyno_metadata"
+  s.homepage    = "https://github.com/dentarg/dyno_metadata"
   s.summary     = "Information about the app and environment on Heroku."
   s.description = "Gives easy access to details about the release, dyno size,
                   application name as well as the unique identifier for the
