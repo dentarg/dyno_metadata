@@ -5,6 +5,7 @@ RSpec.describe DynoMetadata do
     {
       app_id:             "9daa2797-e49b-4624-932f-ec3f9688e3da",
       app_name:           "example-app",
+      dyno:               "web.1",
       dyno_id:            "1vac4117-c29f-4312-521e-ba4d8638c1ac",
       release_created_at: "2015-04-02T18:00:42Z",
       release_version:    "v42",

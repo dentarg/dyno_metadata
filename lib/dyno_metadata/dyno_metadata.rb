@@ -11,6 +11,10 @@ module DynoMetadata
     fetch "HEROKU_APP_NAME", "example-app"
   end
 
+  def dyno
+    fetch "DYNO", "web.1"
+  end
+
   def dyno_id
     fetch "HEROKU_DYNO_ID", "1vac4117-c29f-4312-521e-ba4d8638c1ac"
   end
@@ -36,10 +40,11 @@ module DynoMetadata
     slug_commit[0, length]
   end
 
-  def to_h
+  def to_h # rubocop:disable Metrics/MethodLength
     {
       app_id:             app_id,
       app_name:           app_name,
+      dyno:               dyno,
       dyno_id:            dyno_id,
       release_created_at: release_created_at,
       release_version:    release_version,
