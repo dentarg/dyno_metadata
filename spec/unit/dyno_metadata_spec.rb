@@ -22,6 +22,11 @@ RSpec.describe DynoMetadata do
     it { is_expected.to eq(defaults.fetch(:slug_commit)) }
   end
 
+  describe ".short_commit(12)" do
+    subject { described_class.short_commit(12) }
+    it { is_expected.to eq("2c3a0b24069a") }
+  end
+
   describe "::VERSION" do
     subject { described_class::VERSION }
     it { is_expected.to match(/\d+.\d+.\d+/) }

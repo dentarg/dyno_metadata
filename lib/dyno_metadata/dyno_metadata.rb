@@ -32,8 +32,8 @@ module DynoMetadata
     fetch "HEROKU_SLUG_DESCRIPTION", "Deploy 2c3a0b2"
   end
 
-  def short_commit
-    slug_commit[0, 7]
+  def short_commit(length = 7)
+    slug_commit[0, length]
   end
 
   def to_h
