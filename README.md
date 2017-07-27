@@ -8,6 +8,25 @@ Installation
 
     gem install dyno_metadata
 
+Methods
+
+```ruby
+$ ruby -I lib -r dyno_metadata.rb -e ' \
+(DynoMetadata.methods - Object.methods).each { |method| \
+  puts "DynoMetadata.#{method}\n" ; \
+}'
+DynoMetadata.app_id
+DynoMetadata.app_name
+DynoMetadata.dyno_id
+DynoMetadata.release_created_at
+DynoMetadata.release_version
+DynoMetadata.slug_commit
+DynoMetadata.commit
+DynoMetadata.slug_description
+DynoMetadata.short_commit
+DynoMetadata.to_h
+```
+
 Demonstration
 
 ```ruby
