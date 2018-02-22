@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
                    application name as well as the unique identifier for the
                    particular running dyno on Heroku."
   s.license      = "MIT"
-  s.files        = Dir.glob("{lib}/**/*") + %w(README.md)
+  s.files        = Dir.glob("{lib}/**/*") + %w[README.md]
   s.require_path = "lib"
   s.required_ruby_version = ">= 2.1.10"
 end

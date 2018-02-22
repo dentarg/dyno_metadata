@@ -20,4 +20,4 @@ rescue LoadError
   warn "Rakefile could not require RuboCop gem"
 end
 
-task default: [:spec, :rubocop]
+task default: %i[spec rubocop]
