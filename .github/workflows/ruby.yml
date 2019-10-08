@@ -8,7 +8,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        ruby: [ '2.3.x', '2.4.x', '2.5.x', '2.6.x' ]
+        ruby: [ '2.4.x', '2.5.x', '2.6.x' ]
       fail-fast: false
     name: Ruby ${{ matrix.ruby }} ${{ matrix.os }}
     steps:
