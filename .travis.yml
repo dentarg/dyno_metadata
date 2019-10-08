@@ -6,10 +6,11 @@ dist: trusty
 sudo: false
 
 rvm:
-  - jruby-9.1.13.0
-  - 2.2.8
-  - 2.3.5
-  - 2.4.2
+  - jruby-9.2.8.0
+  - 2.3.8
+  - 2.4.9
+  - 2.5.7
+  - 2.6.5
   - jruby-head
   - ruby-head
 
