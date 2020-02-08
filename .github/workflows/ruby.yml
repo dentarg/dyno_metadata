@@ -7,21 +7,20 @@ on:
 
 jobs:
   build:
-    runs-on: ${{ matrix.os }}
+    name: '${{ matrix.os }}: ${{ matrix.ruby }}'
     strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-        ruby: [ '2.4.x', '2.5.x', '2.6.x' ]
       fail-fast: false
-    name: ${{ matrix.ruby }} on ${{ matrix.os }}
+      matrix:
+        os: [ ubuntu-latest, windows-latest ]
+        ruby: [ 2.4, 2.5, 2.6, 2.7, jruby, truffleruby ]
+      fail-fast: false
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Ruby ${{ matrix.ruby }}
-      uses: actions/setup-ruby@v1
+      uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - name: Build and test with Rake
-      run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rake
+    - run: ruby -v
+    - run: bundle install --jobs 4 --retry 3
+    - run: bundle exec rake
