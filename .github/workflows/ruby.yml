@@ -15,8 +15,6 @@ jobs:
         ruby: [ 2.4, 2.5, 2.6, 2.7, jruby, truffleruby ]
         exclude:
           - os: windows-latest
-            ruby: jruby
-          - os: windows-latest
             ruby: truffleruby
     runs-on: ${{ matrix.os }}
     steps:
@@ -27,4 +25,4 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
     - run: ruby -v
     - run: bundle install --jobs 4 --retry 3
-    - run: bundle exec rake
+    - run: bundle exec rake default
