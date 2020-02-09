@@ -6,7 +6,7 @@ on:
   - cron:  '0 0 1 * *' # at 00:00 on the 1st of every month
 
 jobs:
-  build:
+  test:
     name: '${{ matrix.os }}: ${{ matrix.ruby }}'
     strategy:
       fail-fast: false
@@ -25,4 +25,16 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
     - run: ruby -v
     - run: bundle install --jobs 4 --retry 3
-    - run: bundle exec rake default
+    - run: bundle exec rake spec
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+    - run: ruby -v
+    - run: bundle install --jobs 4 --retry 3
+    - run: bundle exec rake rubocop
