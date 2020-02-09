@@ -31,10 +31,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Ruby
-      uses: ruby/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.7
     - run: ruby -v
     - run: bundle install --jobs 4 --retry 3
     - run: bundle exec rake rubocop
+
+  install:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.7
+    - run: ruby -v
+    - run: gem build dyno_metadata
+    - run: gem install *.gem
