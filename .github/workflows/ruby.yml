@@ -7,12 +7,11 @@ on:
 
 jobs:
   test:
-    name: '${{ matrix.os }}: ${{ matrix.ruby }}'
     strategy:
       fail-fast: false
       matrix:
         os: [ ubuntu-latest, windows-latest ]
-        ruby: [ 2.4, 2.5, 2.6, 2.7, ruby-head, jruby, truffleruby ]
+        ruby: [ 2.4, 2.5, 2.6, 2.7, '3.0', ruby-head, jruby, truffleruby ]
         exclude:
           - os: windows-latest
             ruby: truffleruby
