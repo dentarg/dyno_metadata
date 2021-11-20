@@ -79,6 +79,4 @@ p DynoMetadata.short_commit(12)'
 
     * If you are not logged in as on the correct account, the rake task will fail and tell you to set credentials via `gem push`, do that and run the `release` task again. Use [keycutter](https://github.com/joshfrench/keycutter) to manage multiple RubyGems accounts.
 
-* Update the changelog with [GitHub Changelog Generator](https://github.com/skywinder/github-changelog-generator/) commit and push manually.
-
-        github_changelog_generator
+* Update the changelog manually, commit and push.
