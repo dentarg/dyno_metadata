@@ -1,12 +1,22 @@
-Documentation:
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+
+Gemspec/RequiredRubyVersion:
   Enabled: false
 
 Metrics/BlockLength:
   Exclude:
     - "**/*_spec.rb"
 
+Layout/HashAlignment:
+  EnforcedColonStyle: table
+
+Style/Documentation:
+  Enabled: false
+
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInHashLiteral:
   EnforcedStyleForMultiline: comma

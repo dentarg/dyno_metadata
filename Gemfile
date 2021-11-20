@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source "https://rubygems.org/"
 
 gemspec
@@ -5,5 +7,5 @@ gemspec
 group :development do
   gem "rake"
   gem "rspec", "< 4"
-  gem "rubocop", "~> 0.49.0"
+  gem "rubocop", "< 2"
 end
