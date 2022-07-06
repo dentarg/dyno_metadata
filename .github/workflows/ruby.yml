@@ -17,9 +17,8 @@ jobs:
             ruby: truffleruby
     runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Set up Ruby ${{ matrix.ruby }}
-      uses: ruby/setup-ruby@v1
+    - uses: actions/checkout@v3
+    - uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
     - run: ruby -v
@@ -27,23 +26,25 @@ jobs:
     - run: bundle exec rake spec
 
   lint:
+    needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 3.1
     - run: ruby -v
     - run: bundle install --jobs 4 --retry 3
     - run: bundle exec rake rubocop
 
   install:
+    needs: test
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7
+        ruby-version: 3.1
     - run: ruby -v
     - run: gem build dyno_metadata
     - run: gem install *.gem
