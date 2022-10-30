@@ -1,5 +1,9 @@
 # Change Log
 
+## Next
+
+* Bump required Ruby version to 2.5.9
+
 ## [v0.0.3](https://github.com/dentarg/dyno_metadata/tree/v0.0.2) (2021-11-20)
 [Full Changelog](https://github.com/dentarg/dyno_metadata/compare/v0.0.2...v0.0.3)
 
