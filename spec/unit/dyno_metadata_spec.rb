@@ -18,6 +18,28 @@ RSpec.describe DynoMetadata do
   subject { described_class.to_h }
   it { is_expected.to match(defaults) }
 
+  context "values from ENV" do
+    test_env = {
+      HEROKU_APP_ID:             SecureRandom.hex,
+      HEROKU_APP_NAME:           SecureRandom.hex,
+      DYNO:                      SecureRandom.hex,
+      HEROKU_DYNO_ID:            SecureRandom.hex,
+      HEROKU_RELEASE_CREATED_AT: SecureRandom.hex,
+      HEROKU_RELEASE_VERSION:    SecureRandom.hex,
+      HEROKU_SLUG_COMMIT:        SecureRandom.hex,
+      HEROKU_SLUG_DESCRIPTION:   SecureRandom.hex,
+    }
+
+    around do |example|
+      ClimateControl.modify(test_env) do
+        example.run
+      end
+    end
+
+    subject { described_class.to_h.tap { |hsh| hsh.delete(:short_commit) }.values }
+    it { is_expected.to eq(test_env.values) }
+  end
+
   describe ".commit" do
     subject { described_class.commit }
     it { is_expected.to eq(defaults.fetch(:slug_commit)) }

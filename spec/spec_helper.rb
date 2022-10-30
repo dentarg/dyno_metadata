@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "climate_control"
+require "securerandom"
+
 RSpec.configure do |conf|
   conf.disable_monkey_patching!
   conf.filter_run :focus
