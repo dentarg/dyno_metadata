@@ -2,7 +2,8 @@
 
 ## Next
 
-* Bump required Ruby version to 2.5.9
+* Support alternative `ENV`s [`475d005`](https://github.com/dentarg/dyno_metadata/commit/475d005)
+* Bump required Ruby version to 2.5.9 [`e0efd36`](https://github.com/dentarg/dyno_metadata/commit/e0efd36)
 
 ## [v0.0.3](https://github.com/dentarg/dyno_metadata/tree/v0.0.2) (2021-11-20)
 [Full Changelog](https://github.com/dentarg/dyno_metadata/compare/v0.0.2...v0.0.3)
