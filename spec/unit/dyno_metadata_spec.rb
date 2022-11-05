@@ -51,8 +51,8 @@ RSpec.describe DynoMetadata do
         FLY_PUBLIC_IP:      "2605:4c40:197:7fd0:0:fa4a:e57b:1",
         FLY_VCPU_COUNT:     "1",
         FLY_VM_MEMORY_MB:   "256",
-        # Alternatives
-        RELEASE_CREATED_AT: "2022-11-03T21:00:00Z",
+        # https://github.com/dentarg/fly/commit/b8685c570ea849367f1a719121bcba0bf6645b3f
+        RELEASE_CREATED_AT: "2022-11-05T17:29:22+00:00",
         RELEASE_VERSION:    "v123",
         RELEASE_COMMIT:     "e0efd36c5f678ace3c54694b7bf94db6ba4cb649",
       }
